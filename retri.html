@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "css/retri.css">
+    <title>Retrival page</title>
+</head>
+<body>
+    <nav>
+        <label class = "logo">meDapp</label>
+        <ul>
+            <li><a href = "web1.html">Home</a></li>
+            <li><a href = "#">About</a></li>
+            <li><a href = "#">Contact</a></li>
+            <li><a href = "#">Login</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br><br><br>
+    <div class = "box">
+        <center><h1>RETRIEVE FILE</h1></center>
+    </div>
+    
+    <div class="login-page">
+        <div class="form">
+          
+          <form class="login-form">
+            <input type="text" placeholder="Hash ID" id = "hash"/>
+            <input type="password" placeholder="Password"/>
+            <!--<button>Get</button>-->
+            <button type="button" onclick="getInputValue();">Get </button>
+            <script>
+                const ipfsClient = require('ipfs-http-client');
+  const fs = require('fs');
+  
+  const ipfs = new ipfsClient({ host: 'localhost', port: '5001', protocol: 'http'});
+  
+  const cid = 'QmWqs6MwpnrAGT7dzmQCg6wgcAdZyXpx8vmtVvd8AgJwRt'
+  
+  async function test(){
+      for await (const file of ipfs.get(cid)) {
+          console.log(file.path)
+      
+          if (!file.content) continue;
+      
+          const content = []
+      
+          for await (const chunk of file.content) {
+          content.push(chunk)
+          }
+          
+          console.log(content)
+          //String.fromCharCode(content)
+          console.log(Promise.resolve(String.fromCharCode(content)))
+          //const word=new Buffer.from(content).toString('ascii');
+          //console.log(word)
+      }
+  }
+  test();
+            </script>
+            <script>
+              function getInputValue(){
+                  // Selecting the input element and get its value 
+                  var inputVal = document.getElementById("hash").value;
+                  var start = "https://ipfs.io/ipfs/";
+                  var temp = start.concat(inputVal);
+                  
+                  // Displaying the value
+                  //alert(inputVal);
+                  //location.replace(temp);
+                  window.open(temp, '_blank');
+              }
+          </script>
+         
+
+          </form>
+        </div>
+      </div>
+   
+</body>
+</html>

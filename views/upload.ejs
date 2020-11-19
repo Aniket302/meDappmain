@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        
+        *{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: roboto;
+    user-select: none;
+    background-image: url(3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+nav{
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color:white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin :0 5px;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+a:hover{
+    background: #1b9bff;
+    transition: .5s;
+}
+
+p.h{
+    padding-left: 100px;
+    padding-right:100px;
+    font-family: Source Sans Pro;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+p.d{
+    font-family: Source Sans Pro;
+    padding-left: 100px;
+    padding-right:100px;
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    
+}
+
+p.k{
+    font-family: Source Sans Pro;
+    padding-left: 100px;
+    padding-right:100px;
+    font-size: 30px;
+    padding-bottom: 20px;
+    padding-top: 22px;
+}
+
+div.image{
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left:50px;
+}
+
+    h1{
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+   
+    label{
+        text-align: center;
+    }
+
+
+    h1{
+        font-family: tahoma;
+        font-weight: bold;
+        word-spacing: 5px;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        /*color: #26004d;*/
+        /*color: #064762;*/
+        color: #034169;
+    }
+
+    h2{
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .box{
+        width: 58%;
+        padding: 10px;
+        border: 3px solid #56a0be;
+        margin: auto;
+        background-color: #93cce0;
+        cursor: text;
+    }
+
+
+
+    </style>
+    <title>IPFS Demo</title>
+</head>
+<body>
+    
+    <nav>
+        <label class = "logo">meDapp</label>
+        <ul>
+            <li><a href = "http://localhost/welp/web1.html">Home</a></li>
+            <li><a href = "#">About</a></li>
+            <li><a href = "#">Contact</a></li>
+            <li><a href = "http://localhost:3000">Upload Another</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br><br>
+    <center><div class = "box2">
+        <h1>FILE SUCCESSFULLY UPLOADED</h1>
+    </div></center>
+        <br>
+    <div class = "box">
+        <h2>Filename: <%= fileName %></h2>
+        <br>
+        <h2>Hash: <a href="<%= fileHash %>"><%= fileHash %></a></h2>
+
+    </div>
+
+
+      
+</body>
+</html>
